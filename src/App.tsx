@@ -252,11 +252,11 @@ function App() {
     <div class="app-shell" data-mobile-tab={mobileTab()}>
       <main class="workspace" data-hidden={mobileTab() !== 'play'}>
         <header class="workspace__header">
-          <div>
+          <div class="workspace__intro">
             <p class="brand-mark">TYPE MATCHUP</p>
             <h1>ポケモンタイプ相性学習ゲーム</h1>
             <p class="workspace__subtitle">
-              攻撃タイプを見て、防御側の倍率を 6 択で答える単画面トレーナー。
+              攻撃タイプを見て、倍率だけを素早く判断する単画面ワークスペース。
             </p>
           </div>
 
@@ -377,7 +377,7 @@ function App() {
           </div>
 
           <p class="inspector__stamp">
-            Data {POKEMON_DATA_GENERATED_AT ? 'ready' : 'pending'}
+            {POKEMON_DATA_GENERATED_AT ? 'データ更新済み' : 'データ準備中'}
           </p>
         </header>
 
