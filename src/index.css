@@ -1,0 +1,56 @@
+:root {
+  font-family:
+    'IBM Plex Sans JP',
+    'BIZ UDPGothic',
+    'Hiragino Sans',
+    'Noto Sans JP',
+    sans-serif;
+  color: #f4efe8;
+  background:
+    radial-gradient(circle at top left, rgba(255, 110, 71, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(216, 52, 52, 0.18), transparent 24%),
+    linear-gradient(180deg, #22171a 0%, #171214 46%, #100d0e 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
