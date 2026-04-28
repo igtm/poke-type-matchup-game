@@ -214,13 +214,20 @@
 .question-card__header h1 {
   margin: 4px 0 0;
   font-size: clamp(1.5rem, 2.2vw, 2.35rem);
-  line-height: 1;
+  line-height: 1.04;
   letter-spacing: -0.04em;
+}
+
+.question-card__identity,
+.question-card__series {
+  min-width: 0;
 }
 
 .question-card__slug {
   margin: 10px 0 0;
   color: var(--text-dim);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .question-card__series {
@@ -633,9 +640,7 @@
 
   .question-card {
     min-height: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
+    overflow: hidden;
   }
 
   .answer-panel,
@@ -648,10 +653,34 @@
   }
 
   .question-card__header {
+    gap: 10px;
     padding-bottom: 10px;
   }
 
+  .question-card__header h1 {
+    font-size: clamp(1.22rem, 4.9vw, 1.72rem);
+  }
+
+  .question-card__slug {
+    margin-top: 6px;
+    font-size: 0.84rem;
+  }
+
+  .question-card__series {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    align-items: center;
+    font-size: 0.84rem;
+  }
+
   .question-card__body {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     gap: 12px;
     padding: 14px 16px 16px;
   }
@@ -660,36 +689,51 @@
     gap: 12px;
   }
 
+  .question-card__figure,
+  .question-card__meta {
+    flex: none;
+  }
+
   .sprite-frame {
-    min-height: 152px;
+    min-height: 136px;
   }
 
   .type-row {
-    gap: 8px;
+    gap: 6px;
   }
 
   .type-badge {
     min-height: 32px;
-    padding: 0 12px;
+    padding: 0 11px;
     font-size: 0.84rem;
   }
 
   .question-card__prompt {
-    gap: 8px;
-    padding: 12px 14px;
+    gap: 6px;
+    padding: 10px 12px;
   }
 
   .meta-grid div {
-    padding: 8px 10px;
+    padding: 7px 9px;
     border-radius: 14px;
   }
 
+  .question-card__meta {
+    gap: 10px;
+  }
+
   .stat-list {
-    gap: 8px;
+    gap: 6px;
   }
 
   .stat-row {
-    font-size: 0.84rem;
+    grid-template-columns: 60px 38px minmax(0, 1fr);
+    gap: 8px;
+    font-size: 0.78rem;
+  }
+
+  .stat-bar {
+    height: 8px;
   }
 
   .run-metrics,
@@ -700,20 +744,20 @@
 
   .answer-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
   }
 
   .answer-button {
-    min-height: 58px;
-    padding: 10px 8px;
+    min-height: 48px;
+    padding: 8px 4px;
     gap: 2px;
     justify-items: center;
-    border-radius: 16px;
+    border-radius: 14px;
     text-align: center;
   }
 
   .answer-button__label {
-    font-size: 1rem;
+    font-size: 0.92rem;
     line-height: 1;
   }
 
@@ -722,8 +766,8 @@
   }
 
   .answer-panel {
-    gap: 10px;
-    padding: 12px 14px;
+    gap: 8px;
+    padding: 10px 12px;
     border-radius: 20px;
   }
 
@@ -749,12 +793,17 @@
 
   .answer-panel .ghost-button {
     width: auto;
-    padding: 9px 12px;
+    padding: 8px 10px;
   }
 
   .feedback-line {
     min-height: 0;
-    font-size: 0.82rem;
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+
+  .feedback-line[data-idle='true'] {
+    display: none;
   }
 
   .mobile-nav {
@@ -868,7 +917,16 @@
     align-items: flex-start;
   }
 
+  .question-card__header h1 {
+    font-size: 1.16rem;
+  }
+
+  .question-card__slug {
+    font-size: 0.78rem;
+  }
+
   .question-card__series {
+    gap: 4px 8px;
     justify-items: start;
     text-align: left;
   }
@@ -903,12 +961,12 @@
   }
 
   .answer-button {
-    min-height: 54px;
-    padding: 9px 6px;
+    min-height: 46px;
+    padding: 7px 4px;
   }
 
   .answer-button__label {
-    font-size: 0.94rem;
+    font-size: 0.88rem;
   }
 
   .rank-row,
@@ -947,6 +1005,24 @@
     grid-template-columns: 1fr;
   }
 
+  .question-card__header h1 {
+    font-size: 1.08rem;
+  }
+
+  .question-card__slug,
+  .question-card__series {
+    font-size: 0.74rem;
+  }
+
+  .question-card__body {
+    gap: 10px;
+    padding-top: 12px;
+  }
+
+  .sprite-frame {
+    min-height: 124px;
+  }
+
   .run-metrics {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
@@ -980,7 +1056,7 @@
   }
 
   .answer-button {
-    min-height: 50px;
+    min-height: 44px;
     padding: 8px 4px;
   }
 

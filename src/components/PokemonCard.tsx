@@ -22,7 +22,7 @@ export function PokemonCard(props: PokemonCardProps) {
   return (
     <section class="question-card" data-feedback={props.feedbackStatus}>
       <header class="question-card__header">
-        <div>
+        <div class="question-card__identity">
           <p class="eyebrow">対象ポケモン</p>
           <h1>{props.pokemon.nameJa}</h1>
           <p class="question-card__slug">

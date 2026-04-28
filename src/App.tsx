@@ -325,7 +325,11 @@ function App() {
                   onSelect={handleAnswer}
                 />
 
-                <p class="feedback-line" data-status={feedbackState()?.status ?? 'idle'}>
+                <p
+                  class="feedback-line"
+                  data-status={feedbackState()?.status ?? 'idle'}
+                  data-idle={feedbackState() === null}
+                >
                   {feedbackState()?.message ??
                     '問題は自動で切り替わります。縦スクロールなしでテンポよく復習できます。'}
                 </p>
